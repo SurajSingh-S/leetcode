@@ -3,17 +3,20 @@ class Solution {
         int m = grid.length;
         int n = grid[0].length;
 
-        // Calculate total sum of all elements
         int totalSum = 0;
-        for (int[] row : grid) {
-            for (int val : row) {
-                totalSum += val;
+        // for (int[] row : grid) {
+        //     for (int val : row) {
+        //         totalSum += val;
+        //     }
+        // }
+        for(int i=0;i<grid.length;i++){
+            for(int j=0;j<grid[0].length;j++){
+                totalSum+=grid[i][j];
             }
         }
 
-        // Try horizontal cuts
         int topSum = 0;
-        for (int i = 0; i < m - 1; i++) {  // cut after row i
+        for (int i = 0; i < m - 1; i++) {  
             for (int j = 0; j < n; j++) {
                 topSum += grid[i][j];
             }
@@ -22,7 +25,7 @@ class Solution {
             }
         }
 
-        // Try vertical cuts
+        
         int[] colSum = new int[n];
         for (int j = 0; j < n; j++) {
             for (int i = 0; i < m; i++) {
@@ -31,7 +34,7 @@ class Solution {
         }
 
         int leftSum = 0;
-        for (int j = 0; j < n - 1; j++) {  // cut after column j
+        for (int j = 0; j < n - 1; j++) {  
             leftSum += colSum[j];
             if (leftSum * 2 == totalSum) {
                 return true;
