@@ -4,11 +4,6 @@ class Solution {
         int n = grid[0].length;
 
         int totalSum = 0;
-        // for (int[] row : grid) {
-        //     for (int val : row) {
-        //         totalSum += val;
-        //     }
-        // }
         for(int i=0;i<grid.length;i++){
             for(int j=0;j<grid[0].length;j++){
                 totalSum+=grid[i][j];
@@ -26,20 +21,16 @@ class Solution {
         }
 
         
-        int[] colSum = new int[n];
-        for (int j = 0; j < n; j++) {
-            for (int i = 0; i < m; i++) {
-                colSum[j] += grid[i][j];
-            }
-        }
+       int leftSum = 0;
+for (int j = 0; j < n - 1; j++) {  // try cut after column j
+    for (int i = 0; i < m; i++) {
+        leftSum += grid[i][j];    // accumulate column values
+    }
+    if (leftSum * 2 == totalSum) {
+        return true;
+    }
+}
 
-        int leftSum = 0;
-        for (int j = 0; j < n - 1; j++) {  
-            leftSum += colSum[j];
-            if (leftSum * 2 == totalSum) {
-                return true;
-            }
-        }
 
         return false;
     }
