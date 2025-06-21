@@ -11,9 +11,12 @@ class Solution {
         Set<Integer> set= new HashSet<>();
 
         for(int i:arr){
-            while(i>0 && !set.add(i)){
+            while(i>0 && set.contains(i)){
                 i--;
                 count++;
+            }
+            if(i>0){
+                 set.add(i);
             }
         }
         return count;
