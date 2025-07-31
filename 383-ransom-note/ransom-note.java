@@ -3,8 +3,8 @@ class Solution {
         int count=0;
         char[] ransomNotearr=ransomNote.toCharArray();
         char[] magazinearr=magazine.toCharArray();
-        Arrays.sort(ransomNotearr);
-        Arrays.sort(magazinearr);
+        // Arrays.sort(ransomNotearr);
+        // Arrays.sort(magazinearr);
         for(int i=0;i<ransomNotearr.length;i++){
             for(int j=0;j<magazinearr.length;j++){
                 if(ransomNotearr[i]==magazinearr[j]) {
