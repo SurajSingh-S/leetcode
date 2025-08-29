@@ -1,6 +1,13 @@
 class Solution {
     public long flowerGame(int n, int m) {
-        return 1L * n * m / 2;
+
+        long oddX = (n + 1) / 2;
+        long evenX = n / 2;
+
+        long oddY = (m + 1) / 2;
+        long evenY = m / 2;
+        
+        return oddX * evenY + evenX * oddY;
 
     }
 }
