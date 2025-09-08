@@ -2,4 +2,4 @@
 select e.unique_id , f.name
 from Employees f
 left join EmployeeUNI e
-on e.id=f.id;
+on f.id=e.id;
