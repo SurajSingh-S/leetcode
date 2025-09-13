@@ -1,26 +1,22 @@
 public class Solution {
     public int MaxFreqSum(string s) {
         int [] freq= new int [26];
+        int maxv=0;
+        int maxc=0;
+        string v="aeiou";
 
-        string v = "aeiou";
-
-        foreach(char i in s){
+        foreach(int i in s){
             freq[i-'a']++;
         }
 
-        int maxv=0;
-        int maxc=0;
-
         for(int i=0;i<26;i++){
-            char ch= (char)('a'+i);
-
-            if(v.Contains(ch)) {
+            char ch= (char)(i+'a');
+            if(v.Contains(ch)){
                 maxv=Math.Max(maxv,freq[i]);
             }
-            else{
+            else {
                 maxc=Math.Max(maxc,freq[i]);
             }
-
         }
         return maxc+maxv;
     }
