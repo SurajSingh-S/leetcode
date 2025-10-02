@@ -7,7 +7,7 @@ class Solution {
             numBottles= numBottles-numExchange+1;
             count++;
             numExchange++;
-            //numBottles++;
+            
         }
         return count;
     }
