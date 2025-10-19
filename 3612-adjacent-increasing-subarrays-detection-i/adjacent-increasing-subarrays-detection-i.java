@@ -13,7 +13,11 @@ class Solution {
                 inc=1;
             }
 
-            maxlen=Math.max(maxlen,Math.max(inc/2, Math.min(previnc,inc)));
+           int insideSameRun = inc / 2;
+           int acrossRuns = Math.min(previnc, inc);
+           int bestHere = Math.max(insideSameRun, acrossRuns);
+           maxlen = Math.max(maxlen, bestHere);
+
             if(maxlen >= k ) return true;
         }
         return false;
