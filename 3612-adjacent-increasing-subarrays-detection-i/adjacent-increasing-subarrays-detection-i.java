@@ -13,7 +13,7 @@ class Solution {
                 inc=1;
             }
 
-            maxlen=Math.max(maxlen,Math.max(inc>>1, Math.min(previnc,inc)));
+            maxlen=Math.max(maxlen,Math.max(inc/2, Math.min(previnc,inc)));
             if(maxlen >= k ) return true;
         }
         return false;
