@@ -1,23 +1,18 @@
 class Solution {
     public List<String> removeAnagrams(String[] words) {
-        
-        List<String> res = new ArrayList<>();
-        String prevSorted="";
-        Set<String> set= new HashSet<>();
+        List<String> res= new ArrayList<>();
+        String prev = "";
 
         for(int i=0;i<words.length;i++){
-            char [] w= words[i].toCharArray();
+            char[] w= words[i].toCharArray();
             Arrays.sort(w);
             String sorted= new String(w);
 
-            if (!sorted.equals(prevSorted)) {
-                res.add(words[i]);    
-                prevSorted = sorted;  
+            if(!prev.equals(sorted)){
+                res.add(words[i]);
+                prev= sorted;
             }
         }
-
-
         return res;
-        
     }
 }
