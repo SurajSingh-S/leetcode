@@ -1,0 +1,23 @@
+class Solution {
+    public boolean isValid(String ss) {
+        Stack<Character> s= new Stack<>();
+
+        for(char c: ss.toCharArray()){
+            if(c=='(' || c== '{'|| c== '['){
+                s.push(c);
+            }
+
+            else if (c==')' && !s.isEmpty() && s.peek()=='('){
+                s.pop();
+            }
+            else if (c==']' && !s.isEmpty() && s.peek()=='['){
+                s.pop();
+            }
+            else if (c=='}' && !s.isEmpty() && s.peek()=='{'){
+                s.pop();
+            }
+            else return false;
+        }
+        return s.isEmpty();
+    }
+}
