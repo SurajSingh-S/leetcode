@@ -18,7 +18,9 @@ class Solution {
                 freqs[s.charAt(i-m)-'a']--;
             }
 
-            if(Arrays.equals(freqs,freqp)) res.add(i-m+1);
+            if(Arrays.equals(freqs,freqp)) {
+                res.add(i-m+1);
+            }
         }
         return res;
     }
