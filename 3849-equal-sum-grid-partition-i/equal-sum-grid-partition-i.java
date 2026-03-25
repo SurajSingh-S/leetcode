@@ -3,14 +3,14 @@ class Solution {
         int m = grid.length;
         int n = grid[0].length;
 
-        int totalSum = 0;
+        long totalSum = 0;
         for(int i=0;i<grid.length;i++){
             for(int j=0;j<grid[0].length;j++){
                 totalSum+=grid[i][j];
             }
         }
 
-        int topSum = 0;
+        long topSum = 0;
         for (int i = 0; i < m - 1; i++) {  
             for (int j = 0; j < n; j++) {
                 topSum += grid[i][j];
@@ -21,7 +21,7 @@ class Solution {
         }
 
         
-       int leftSum = 0;
+       long leftSum = 0;
 for (int j = 0; j < n - 1; j++) {  // try cut after column j
     for (int i = 0; i < m; i++) {
         leftSum += grid[i][j];    // accumulate column values
