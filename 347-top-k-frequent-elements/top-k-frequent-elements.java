@@ -9,7 +9,7 @@ class Solution {
         PriorityQueue<Integer> pq= new PriorityQueue<>((a,b)->map.get(b)-map.get(a));
 
         for(Integer i:map.keySet()){
-            pq.add(i);
+            pq.offer(i);
         }
 
         int []arr= new int [k];
